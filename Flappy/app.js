@@ -1,16 +1,19 @@
+console.log('hello')
+
 document.addEventListener('DOMContentLoaded', () => {
 
 const bird = document.querySelector('.bird')
 const gameDisplay = document.querySelector('.board')
-const ground = document.querySelector('.ground')
 
+  
 let birdLeft = 220
-let birdBottom = 100
-
+let birdBottom = 300
+let gravity = 2
 
 function startGame(){
+    birdBottom = birdBottom - gravity
     bird.style.bottom = birdBottom + 'px'
-    bird.syle.left = birdLeft + 'px'
+    bird.style.left = birdLeft + 'px'
 }
 startGame()
 let timerId = setInterval(startGame, 20)
@@ -25,13 +28,21 @@ document.addEventListener('keyup', jump)
 
 function newObstacle(){
     let obstacleLeft = 500
-    
+    let randomHeight = Math.random() * 60
+    let obstacleBottom = randomHeight
    const obstacle = document.createElement('div')
    obstacle.classList.add('obstacle')
    gameDisplay.appendChild(obstacle)
    obstacle.style.left = obstacleLeft + 'px'
+   obstacle.style.bottom = obstacleBottom + 'px'
+
+   
 }
 newObstacle()
 
+
+
 })
 
+
+ 
