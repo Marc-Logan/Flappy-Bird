@@ -36,6 +36,18 @@ function newObstacle(){
    obstacle.style.left = obstacleLeft + 'px'
    obstacle.style.bottom = obstacleBottom + 'px'
 
+    function moveObstacle(){
+        obstacleLeft -= 2
+        obstacle.style.left = obstacleLeft + 'px'
+
+        if (obstacleLeft === -60){
+            clearInterval(timerID)
+            gameDisplay.removeChild(obstacle)
+        }
+    }
+    let timerID = setInterval(moveObstacle, 20)
+    setTimeout(newObstacle, 3000)
+    
    
 }
 newObstacle()
