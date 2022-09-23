@@ -5,6 +5,7 @@
     border: 1px solid black;
     position: relative;
     left: 80px;
+
 }
 
 .sky{
@@ -12,6 +13,7 @@
     width: 500px;
     height: 580px;
     position: absolute;
+    background-image: url("./backgroundImg.png");
 }
 
 .ground{
@@ -21,13 +23,15 @@
     position: absolute;
     top: 580px;
     z-index: +1;
+    background-image: url("./groundImg.png");
 }
 
 .bird {
     position: absolute;
     width: 60px;
     height: 45px;
-    background-color: pink;
+    background-color: rebeccapurple;
+    border-radius: px;
 }
 
 .obstacle{
